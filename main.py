@@ -3,11 +3,8 @@ def get_book_text(path_to_file):
     with open(path_to_file) as f:
         return f.read()
 
-#accept text from book as string; returns # of words in the string
-def number_of_words(contents):
-    word_list = contents.split()
-    return len(word_list)
-
+#word counting import from stats.py
+from stats import number_of_words
 
 #set input for book location (path must be in quotes) and assign to variable for export
 def main():
