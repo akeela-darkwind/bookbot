@@ -6,11 +6,16 @@ def get_book_text(path_to_file):
 #word counting import from stats.py
 from stats import number_of_words
 
+#character counting import from stats.py
+from stats import character_counts
+
 #set input for book location (path must be in quotes) and assign to variable for export
 def main():
     contents = get_book_text("books/frankenstein.txt")
     num_words = number_of_words(contents)
+    num_chars = character_counts(contents)
     print(f"{num_words} words found in the document")
+    print(num_chars)
     #print(contents)
     
 
