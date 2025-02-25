@@ -15,3 +15,19 @@ def character_counts(contents):
             characters[case]  = 1
     return characters
 
+# creates a sorted dictionary for reporting
+def sort_on(dict):
+    return list(dict.values())[0]
+
+def create_report(characters):
+    chars_list = []
+
+    for char, count in characters.items():
+        letter = {char: count}
+        chars_list.append(letter)
+    
+    
+    chars_list.sort(reverse=True, key=sort_on)
+    
+    return chars_list
+    
