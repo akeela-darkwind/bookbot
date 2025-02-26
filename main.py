@@ -1,3 +1,9 @@
+import sys
+if len(sys.argv) < 2:
+    print("Use python3 main.py <path_to_book>")
+    sys.exit(1)
+else:
+    print("Checking your book:"), sys.argv[1]
 #set up book document retrieve
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
@@ -15,7 +21,7 @@ from stats import create_report
 
 #set input for book location (path must be in quotes) and assign to variable for export
 def main():
-    book_path = "books/frankenstein.txt"
+    book_path = sys.argv[1]
     contents, path = get_book_text(book_path)
     num_words = number_of_words(contents)
     num_chars = character_counts(contents)
